@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/index/home",
+    "pages/index/history",
     "pages/index/mine"
   ],
   "subPackages": [],
