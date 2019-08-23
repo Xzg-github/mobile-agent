@@ -7590,23 +7590,6 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 27:
-/*!***********************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/HBuilderProjects/wechat/main.js?{"page":"pages%2Findex%2Fhistory"} ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _history = _interopRequireDefault(__webpack_require__(/*! ./pages/index/history.vue */ 28));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_history.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
