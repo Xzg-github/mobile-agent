@@ -1607,7 +1607,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 19:
+/***/ 11:
 /*!*********************************************************************************************************!*\
   !*** C:/Users/Administrator/Documents/HBuilderProjects/wechat/main.js?{"page":"pages%2Findex%2Findex"} ***!
   \*********************************************************************************************************/
@@ -1620,6 +1620,23 @@ function normalizeComponent (
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ 12));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_index.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 19:
+/*!********************************************************************************************************!*\
+  !*** C:/Users/Administrator/Documents/HBuilderProjects/wechat/main.js?{"page":"pages%2Findex%2Fhome"} ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _home = _interopRequireDefault(__webpack_require__(/*! ./pages/index/home.vue */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_home.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
@@ -7573,10 +7590,10 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 21:
-/*!********************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/HBuilderProjects/wechat/main.js?{"page":"pages%2Findex%2Fhome"} ***!
-  \********************************************************************************************************/
+/***/ 27:
+/*!***********************************************************************************************************!*\
+  !*** C:/Users/Administrator/Documents/HBuilderProjects/wechat/main.js?{"page":"pages%2Findex%2Fhistory"} ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7584,8 +7601,8 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _home = _interopRequireDefault(__webpack_require__(/*! ./pages/index/home.vue */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_home.default);
+var _history = _interopRequireDefault(__webpack_require__(/*! ./pages/index/history.vue */ 28));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_history.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
@@ -7621,9 +7638,9 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 30:
+/***/ 35:
 /*!********************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/HBuilderProjects/wechat/main.js?{"page":"pages%2Findex%2Fleft"} ***!
+  !*** C:/Users/Administrator/Documents/HBuilderProjects/wechat/main.js?{"page":"pages%2Findex%2Fmine"} ***!
   \********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -7632,25 +7649,8 @@ module.exports = g;
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _left = _interopRequireDefault(__webpack_require__(/*! ./pages/index/left.vue */ 31));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_left.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 36:
-/*!**********************************************************************************************************!*\
-  !*** C:/Users/Administrator/Documents/HBuilderProjects/wechat/main.js?{"page":"pages%2Findex%2Fmiddle"} ***!
-  \**********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _middle = _interopRequireDefault(__webpack_require__(/*! ./pages/index/middle.vue */ 37));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_middle.default);
+var _mine = _interopRequireDefault(__webpack_require__(/*! ./pages/index/mine.vue */ 36));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_mine.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),

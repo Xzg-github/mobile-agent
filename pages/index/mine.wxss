@@ -1,0 +1,17 @@
+.login {
+  padding: 100rpx 122rpx 0 122rpx;
+  font-size: 40rpx;
+}
+.login .list {
+  padding-bottom: 30rpx;
+  font-size: 30rpx;
+}
+.login .list text {
+  color: #808080;
+  padding-bottom: 20rpx;
+}
+.login .list input {
+  width: 500rpx;
+  border-bottom: 1rpx solid #999;
+}
+

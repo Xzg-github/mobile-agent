@@ -149,6 +149,8 @@ var _default =
   },
   methods: {
     formSubmit: function formSubmit() {
+      wx.reLaunch({
+        url: '/pages/index/home' });
 
     } } };exports.default = _default;
 
