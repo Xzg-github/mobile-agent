@@ -12,7 +12,7 @@
 					<image class="img" src="../../static/images/menu3.png"></image>
 					<view>联络历史</view>
 				</navigator>
-<!-- 				<navigator class="box" url="../home/order/order">
+				<!-- <navigator class="box" url="../home/order/order">
 					<image class="img" src="../../static/images/menu1.png"></image>
 					<view>工单管理</view>
 				</navigator>
@@ -47,7 +47,7 @@
 		<Softphone :socketType="socketType" :class_a="page_len == 1 ? '1' : '2'" :toCallFlag="toCallFlag" :pageName="pageName"
 		 :socketObj="socketObj" @callStartTime="callStartTime" @callEndTime="callEndTime" @phoneCallID='phoneCallID'
 		 @setStateActiveCallId='setStateActiveCallId' @getPhoneObj="getCallPhone" @getPageLen="getPageLen" @expand="expand"
-		 @bossFlag="bossFlag" @connectFlag="connectFlag">
+		 @bossFlag="bossFlag" @connectFlag="connectFlag" @closePop='getChose' >
 		</Softphone>
 	</view>
 </template>
@@ -298,6 +298,7 @@
 			//关闭呼入弹窗
 			getChose(val) {
 				this.page_len = val
+				this.getChosePop()
 			},
 
 			//关闭拨号弹窗
@@ -356,15 +357,15 @@
 		// 	font-size: 30upx;
 		// 	color: #666;
 		// 	box-sizing: border-box;
-			
+		// 	
 		// 	.img {
 		// 		display: block;
 		// 		margin: 0 auto 20upx auto;
 		// 		width: 56upx;
 		// 		height: 56upx;
 		// 	}
-			
-			
+		// 	
+		// 	
 		// }
 	}
 </style>

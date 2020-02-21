@@ -108,10 +108,30 @@
 				self.getTimeDate()  //计时器
 				
 				//主动触发按钮 改变show
-				this.show = socketMain.clickBtn(dataobj,this.show)
-				/*if(this.uerInfo.platformType != '3'){
-					return false
-				}*/
+				var watchObj = socketMain.clickBtn(dataobj,this.show)
+				this.show = watchObj.show
+				if(watchObj.phoneNum){ //aspect的呼入号码
+					this.phonenum = watchObj.phoneNum
+					if(route_name != 'pages/home/roster/callOut' && !self.callFlag ){
+						self.$emit("getPhoneObj",watchObj.phoneNum); //呼入电话  
+						
+						self.$emit("getPageLen",2);//控制呼入弹屏 
+						uni.switchTab({
+							url:'/pages/index/home'  
+						})
+					}else if( route_name == 'pages/home/roster/callOut' 
+								&& self.pageName != '首页' 
+								&& !self.toCallFlag
+							){
+								self.$emit("getPageLen",2);//控制呼入弹屏 
+								uni.switchTab({
+									url:'/pages/index/home'
+								}) 
+								self.toCallFlag = true 
+							
+					}
+					
+				}
 				
 				//接受实时事件
 				var receiveEven = socketMain.receiveEvenName(dataobj)
@@ -226,7 +246,8 @@
 						
 						if(temp_phone.length > 6){ //用户打进来接听电话  保存电话号码 (这里还需考虑到客服跟客服的通话号码是4)
 							self.show = 13 // 接听
-							self.phonenum = temp_phone
+						
+							self.phonenum = dataobj[1].callInfo.screenData.ani
 							self.setStateActiveCallId = dataobj.callid
 						} else if ( temp_phone.length == temp_phone2.length && !self.meeting_flag){ //两个号码相等 且不在会议中=被咨询方
 							
@@ -253,6 +274,7 @@
 						}
 						break;
 					case receiveEven.type[3]: //通话中
+					
 						self.connectFlag = 'Y' //接通的标识
 						self.$emit("connectFlag",self.connectFlag); 
 						
@@ -351,6 +373,7 @@
 						}
 					})
 				
+					//var requestFlag = false;(后期打开测试)
 					//获取客户ID、姓名
 					await api.getCusInfo(self.apiDomian,self.uerInfo.token,setPhone,self.starDate,self.endDate,function(data){
 						var obj = data[1].data.data
@@ -359,31 +382,43 @@
 							self.customerCode = infoArr[0].clientId //客户ID
 							self.customerName = infoArr[0].clientName //客户姓名
 						}
+						// if(data.errCode == 0){(后期打开测试)
+						// 	var infoArr = obj.records
+						// 	self.customerCode = infoArr[0].clientId //客户ID
+						// 	self.customerName = infoArr[0].clientName //客户姓名
+						// }else {
+						// 	requestFlag = true
+						// }
 					})
-				
-					var post_obj = {
-						callType: key, //呼叫方向
-						ani: phone1, //主叫号码
-						dnis: phone2.length == 4 ? self.uerInfo.extension : phone2, //被叫号码
-						customerCode: self.customerCode, //客户ID
-						customerName: self.customerName, //客户姓名
-						userCode: self.uerInfo.username, //坐席工号
-						userName: self.uerInfo.nickname, //坐席姓名
-						organCode: self.uerInfo.organCode, //坐席组织机构代码
-						organName: self.uerInfo.organName, //坐席组织机构名称
-						agentNo: self.uerInfo.agentNo, //坐席工号
-						serviceLog:'', //服务结果(可以不传)
-						campaignId:'', //活动id (直接拨号的不传)
-						batchId:'', //批次id(直接拨号的不传)
-						taskId:'', //任务id(直接拨号的不传)
-						phoneCode: self.phoneCode, //手机区号
-						province: self.province , //归属地-省
-						city: self.city, //归属地-市
-						callId: self.phoneCallID, //通话id（较长的号码） 
-						callStartTime: self.callStartTime, //通话开始时间
-						serviceStartTime: self.callStartTime, //通话开始时间
-					}
-					await api.getApiinsAdd(self.apiDomian,self.uerInfo.token,post_obj)
+					
+					//if(!requestFlag){ （后期打开测试）
+						var post_obj = {
+							callType: key, //呼叫方向
+							ani: phone1, //主叫号码
+							dnis: phone2.length == 4 ? self.uerInfo.extension : phone2, //被叫号码
+							customerCode: self.customerCode, //客户ID
+							customerName: self.customerName, //客户姓名
+							userCode: self.uerInfo.username, //坐席工号
+							userName: self.uerInfo.nickname, //坐席姓名
+							organCode: self.uerInfo.organCode, //坐席组织机构代码
+							organName: self.uerInfo.organName, //坐席组织机构名称
+							agentNo: self.uerInfo.agentNo, //坐席工号
+							serviceLog:'', //服务结果(可以不传)
+							campaignId:'', //活动id (直接拨号的不传)
+							batchId:'', //批次id(直接拨号的不传)
+							taskId:'', //任务id(直接拨号的不传)
+							phoneCode: self.phoneCode, //手机区号
+							province: self.province , //归属地-省
+							city: self.city, //归属地-市
+							callId: self.phoneCallID, //通话id（较长的号码） 
+							callStartTime: self.callStartTime, //通话开始时间
+							serviceStartTime: self.callStartTime, //通话开始时间
+						}
+						
+						
+						await api.getApiinsAdd(self.apiDomian,self.uerInfo.token,post_obj)
+					//}
+					
 				}  
 				
 				getInfo()
@@ -447,7 +482,20 @@
 									//软电话显示示闲状态
 									
 									if( self.uerInfo.platformType == '3') {
-										await socketMain.agentavailable()
+										var page_len = getCurrentPages().length
+										var route_name = getCurrentPages()[page_len-1].route
+										console.log('route_name'+route_name)
+										if(route_name != 'pages/home/roster/callOut'){
+											socketMain.agentavailable()
+											self.$emit('closePop',1)
+										}else {
+											uni.navigateBack()
+											socketMain.agentavailable()
+										}
+										
+										
+									}else{
+										this.show = 3
 									}
 								}
 								func()
@@ -456,7 +504,18 @@
 					})
 				}else{
 					if( self.uerInfo.platformType == '3') {
-						socketMain.agentavailable()
+						var page_len = getCurrentPages().length
+						var route_name = getCurrentPages()[page_len-1].route
+						console.log('route_name'+route_name)
+						if(route_name != 'pages/home/roster/callOut'){
+							socketMain.agentavailable()
+							self.$emit('closePop',1)
+						}else {
+							uni.navigateBack()
+							socketMain.agentavailable()
+						}
+					}else{
+						this.show = 3
 					}
 					
 				}
