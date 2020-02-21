@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/MsgList"],{5768:function(t,e,n){"use strict";n.r(e);var a=n("98bd"),o=n.n(a);for(var r in a)"default"!==r&&function(t){n.d(e,t,function(){return a[t]})}(r);e["default"]=o.a},"6af6":function(t,e,n){"use strict";var a=n("a0d4"),o=n.n(a);o.a},"7f1d":function(t,e,n){"use strict";var a=function(){var t=this,e=t.$createElement;t._self._c},o=[];n.d(e,"a",function(){return a}),n.d(e,"b",function(){return o})},"98bd":function(t,e,n){"use strict";(function(t,a){Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0;var o=n("2f62"),r={computed:(0,o.mapState)(["hasLogin","uerInfo"]),props:["msgArr"],data:function(){return{}},onLoad:function(){},methods:{goNext:function(e,n,o){var r=this,s={};s.content=decodeURIComponent(this.msgArr[o].msgDate),s.createName=this.msgArr[o].operatorName,s.sendTime=this.msgArr[o].sendTime,s.noticeTitle=this.msgArr[o].msgTitle,t.setStorage({key:"newContent",data:s,success:function(){console.log(a("data success"," at components\\MsgList.vue:52")),t.navigateTo({url:"/pages/mine/notice"})}}),t.request({method:"POST",url:this.apiDomian+"/news/readNew",data:{msgId:e,agentId:n},header:{"content-type":"application/json",Authorization:"Arch6WithCloud "+r.uerInfo.token}}).then(function(t){})}}};e.default=r}).call(this,n("6e42")["default"],n("0de9")["default"])},a0d4:function(t,e,n){},fa5c:function(t,e,n){"use strict";n.r(e);var a=n("7f1d"),o=n("5768");for(var r in o)"default"!==r&&function(t){n.d(e,t,function(){return o[t]})}(r);n("6af6");var s=n("2877"),u=Object(s["a"])(o["default"],a["a"],a["b"],!1,null,null,null);e["default"]=u.exports}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'components/MsgList-create-component',
+    {
+        'components/MsgList-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('6e42')['createComponent'](__webpack_require__("fa5c"))
+        })
+    },
+    [['components/MsgList-create-component']]
+]);

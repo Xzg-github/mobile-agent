@@ -1,0 +1,90 @@
+page {
+  background: #f7f6f9;
+}
+.userbar {
+  text-align: center;
+  padding: 40rpx 100rpx;
+  margin-bottom: 30rpx;
+  color: #fff;
+  background: -webkit-linear-gradient(left top, #6495ED, #4169E1);
+  background: linear-gradient(left top, #6495ED, #4169E1);
+}
+.userbar .head-img {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.userbar .use-mane {
+  margin: 26rpx 0;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.userbar .use-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  font-size: 26rpx;
+  color: #eee;
+}
+.userbar .use-info .role {
+  font-size: 30rpx;
+  color: #fff;
+  padding-bottom: 10rpx;
+}
+.bottom {
+  background: #fff;
+}
+.bottom .bottom-item {
+  padding-left: 30rpx;
+  font-size: 30rpx;
+}
+.bottom .bottom-item .list {
+  padding-right: 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  border-bottom: 1rpx solid #eee;
+  height: 120rpx;
+  line-height: 40rpx;
+}
+.bottom .bottom-item .list .tip {
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.bottom .bottom-item .icon-left {
+  font-size: 48rpx;
+  padding-right: 28rpx;
+  color: #4a85d3;
+}
+.bottom .bottom-item .icon-right {
+  font-size: 28rpx;
+  color: #999;
+}
+.bottom .bottom-item .sign {
+  position: absolute;
+  right: -14rpx;
+  top: -2rpx;
+  width: 16rpx;
+  height: 16rpx;
+  line-height: 34rpx;
+  border-radius: 50%;
+  background: #FF0000;
+  font-size: 18rpx;
+  color: #fff;
+  text-align: center;
+}
+.bottom .avtive {
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0.7;
+}
+

@@ -1,0 +1,28 @@
+page {
+  background: #f7f6f9;
+}
+.content-wrap {
+  padding: 30rpx 30rpx 0 30rpx;
+  font-size: 30rpx;
+  background: #fff;
+}
+.content-wrap .box {
+  padding-bottom: 20rpx;
+}
+.content-wrap .title {
+  padding-left: 12rpx;
+  margin-bottom: 30rpx;
+  border-left: 4rpx solid #4a85d3;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.content-wrap .item {
+  padding-bottom: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.content-wrap .item .name {
+  width: 32%;
+}
+

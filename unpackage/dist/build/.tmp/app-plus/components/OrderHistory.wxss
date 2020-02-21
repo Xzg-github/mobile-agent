@@ -1,0 +1,47 @@
+.history {
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  margin-bottom: 26rpx;
+  font-size: 24rpx;
+  box-shadow: 0rpx 0rpx 10rpx #ccc;
+  background: #FFF;
+}
+.content-title {
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  border-bottom: 1rpx dashed #ccc;
+}
+.content-title .tips {
+  color: #DD524D;
+}
+.content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  line-height: 60rpx;
+}
+.content .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 33%;
+}
+.content .time {
+  color: #808080;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+

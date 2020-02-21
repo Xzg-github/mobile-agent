@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/login",
+    "pages/index/home",
+    "pages/mine/news",
+    "pages/home/roster/callOut",
+    "pages/home/contact/contact",
+    "pages/home/case/reportForm",
+    "pages/home/order/newForm",
+    "pages/home/order/order",
+    "pages/home/case/case",
+    "pages/home/policy/policy",
+    "pages/home/contact/external",
+    "pages/home/order/details",
+    "pages/home/task/task",
+    "pages/home/roster/roster",
+    "pages/index/mine",
+    "pages/home/contact/incoming",
+    "pages/mine/notice"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "登入",
+    "navigationBarBackgroundColor": "#F7F7F7",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "selectedColor": "#1E90FF",
+    "list": [
+      {
+        "iconPath": "static/images/home.png",
+        "selectedIconPath": "static/images/home2.png",
+        "pagePath": "pages/index/home",
+        "text": "首页"
+      },
+      {
+        "iconPath": "static/images/mine.png",
+        "selectedIconPath": "static/images/mine2.png",
+        "pagePath": "pages/index/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "wechat",
+  "compilerVersion": "2.4.3",
+  "usingComponents": {}
+}

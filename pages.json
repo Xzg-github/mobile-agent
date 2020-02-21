@@ -1,0 +1,161 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// {
+		// 	"path": "pages/home/contact/incoming",
+		// 	"style": {
+		// 		"navigationBarTitleText": "联络详情"
+		// 	}
+		// },
+		{
+			"path": "pages/index/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		
+		{
+			"path": "pages/home/roster/callOut",
+			"style": {
+				"navigationBarTitleText": "信息详情"
+			}
+		},
+		
+		{
+			"path": "pages/index/home",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/index/mine",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		    
+		{
+			"path": "pages/mine/news",
+			"style": {
+				"navigationBarTitleText": "消息公告"
+			}
+		},
+
+		
+		
+		
+		{
+			"path": "pages/home/contact/contact",
+			"style": {
+				"navigationBarTitleText": "联络历史"
+			}
+		},
+
+
+		{
+			"path": "pages/home/case/reportForm",
+			"style": {
+				"navigationBarTitleText": "报案表单填写"
+			}
+		},
+		
+		{
+			"path": "pages/home/order/newForm",
+			"style": {
+				"navigationBarTitleText": "创建工单"
+			}
+		},
+
+		
+		{
+			"path": "pages/home/order/order",
+			"style": {
+				"navigationBarTitleText": "我的工单"
+			}
+		},
+		{
+			"path": "pages/home/case/case",
+			"style": {
+				"navigationBarTitleText": "案件查询"
+			}
+		},
+
+		
+		{
+			"path": "pages/home/policy/policy",
+			"style": {
+				"navigationBarTitleText": "保单查询"
+			}
+		},
+
+
+		{
+			"path": "pages/home/contact/external",
+			"style": {
+				"navigationBarTitleText": "联络详情"
+			}
+		},
+
+		
+		{
+			"path": "pages/home/order/details",
+			"style": {
+				"navigationBarTitleText": "工单详情"
+			}
+		},
+
+		
+
+		{
+			"path": "pages/home/task/task",
+			"style": {
+				"navigationBarTitleText": "我的任务"
+			}
+		},
+
+		{
+			"path": "pages/home/roster/roster",
+			"style": {
+				"navigationBarTitleText": "外呼名单"
+			}
+		},
+
+		
+		
+		
+
+		{
+			"path": "pages/mine/notice",
+			"style": {
+				"navigationBarTitleText": "公告详情"
+			}
+		}
+		
+	],
+	
+	
+	"tabBar": {
+		"selectedColor": "#1E90FF",
+		"list": [
+			{
+				"iconPath": "static/images/home.png",
+				"selectedIconPath": "static/images/home2.png",
+				"pagePath": "pages/index/home",
+				"text": "首页"
+			},
+			{
+				"iconPath": "static/images/mine.png",
+				"selectedIconPath": "static/images/mine2.png",
+				"pagePath": "pages/index/mine",
+				"text": "我的"
+			}
+		]
+	},
+	
+	
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "登入",
+		"navigationBarBackgroundColor": "#F7F7F7",
+		"backgroundColor": "#F8F8F8"
+	}
+}

@@ -1,0 +1,378 @@
+.phone-wrap {
+	
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	width: 100%;
+	
+	&.top { top: 0upx; }
+	&.bottom { bottom: 300upx; }
+	
+		.frame-btn {
+			position: fixed;
+			right: 20upx;
+			padding: 0;
+			width: 100upx;
+			text-align: center;
+			border-radius: 12upx;   
+			height: 60upx;
+			line-height: 60upx;
+			background: #0086B3;
+			color: #fff;
+		}
+	
+		.box {
+			position: relative;
+			margin: 90upx 30upx 20upx 30upx;
+			border-radius: 10upx;
+			font-size: 26upx;
+			padding: 30upx 20upx;
+			color: #fff;
+			box-shadow: 0 0 8upx #666;
+			background: #fff;
+	
+			.top-wrap {
+				position: absolute;
+				top: -56upx;
+				left: 50%;
+				margin-left: -60upx;
+	
+				.btn {
+					// background: linear-gradient(left top, #72a95a, #55A532);
+					color: #333;
+					width: 120upx;
+					height: 120upx;
+					padding-top: 14upx;
+					box-sizing: border-box;
+					text-align: center;
+					border-radius: 50%;
+					border: 1upx solid #999;
+					color: #fff;
+					background: #55A532;
+	
+					.icon {
+						font-size: 50upx;
+					}
+					
+				}
+				.active {
+					background: #3c801e;
+				}
+	
+				.btnImg {
+					font-size: 60upx;
+					padding-top: 28upx;
+				}
+	
+				.callIn-box {
+					display: flex;
+					justify-content: space-between;
+					width: 440upx;
+					margin-left: -160upx;
+				}
+			}
+	
+			.bottom-wrap {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+	
+				.statusBar-box {
+					font-size: 30upx;
+					display: flex;
+					align-items: center;
+					color: #333;
+					letter-spacing: 4upx;
+					
+					.lable {
+						color: #55A532;
+					}
+	
+					.line {
+						height: 30upx;
+						border: 1upx solid #999;
+						margin: 0 10upx;
+					}
+				}
+	
+				.btn2 {
+					display: flex;
+					justify-content: space-between;
+					color: #007AFF;
+					margin-left: 30upx;
+					font-size: 34upx;
+	
+					.freeImg {
+						margin-left: 6upx;
+						font-size: 30upx;
+						color: #ccc;
+					}
+	
+					.busyImg {
+						margin-left: 6upx;
+						font-size: 30upx;
+						color: #DD4A68;
+					}
+				}
+	
+				.divide {
+					height: 60upx;
+					border: 1upx solid #ccc;
+				}
+	
+				.pickUp {
+					font-size: 40upx;
+					font-weight: bold;
+					color: #0086B3;
+				}
+	
+			}
+	
+		}
+	
+		.pd50 {
+			padding-top: 80upx;
+		}
+	
+		.popUp {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 100;
+			background: rgba(0, 0, 0, 0.5);
+	
+			.inner {
+				color: #333;
+				position: relative;
+				transform: translate(-50%,-50%);
+				top: 50%;
+				left: 50%;
+				width: 90%;
+				background: #fff;
+				border-radius: 12upx;
+				padding: 30upx 0;
+	
+				.close {
+					position: absolute;
+					background: #fff;
+					color: #333;
+					width: 60upx;
+					height: 60upx;
+					border: 1upx solid #ccc;
+					line-height: 60upx;
+					text-align: center;
+					border-radius: 50%;
+					font-size: 40upx;
+					right: -20upx;
+					top: -20upx;
+				}
+	
+				.valueBox {
+					margin: 0 auto;
+					width: 340upx;
+	
+					.ipt {
+						font-size: 42upx;
+						font-weight: bold;
+						color: #333;
+						text-align: center;
+					}
+				}
+	
+				.num-wrap {
+					margin: 50upx 20upx 0 70upx;
+					font-size: 56upx;
+					display: flex;
+					justify-content: center;
+					flex-wrap: wrap;
+				}
+	
+				.title {
+					margin-left: 30upx;
+					font-weight: bold;
+					font-size: 32upx;
+				}
+	
+				.nav {
+					display: flex;
+					margin: 20upx 0 20upx 0;
+					text-align: center;
+					background-color: #fff;
+					font-size: 28upx;
+					height: 88upx;
+					line-height: 88upx;
+					border-top: 1upx solid #f0f0f0;
+	
+					.nav-item {
+						flex: 1;
+	
+						&.active {
+							text {
+								position: relative;
+								color: #4a85d3;
+	
+								&:before {
+									content: " ";
+									position: absolute;
+									top: 60upx;
+									left: 50%;
+									margin-left: -12upx;
+									width: 24upx;
+									height: 4upx;
+									background-color: #4a85d3;
+								}
+							}
+						}
+					}
+				}
+	
+				.bottom {
+					height: 440upx;
+					padding: 0upx 30upx;
+	
+					.ipt-box {
+						display: flex;
+						align-items: center;
+						height: 70upx;
+						border: 1upx solid #666;
+						border-radius: 10upx;
+						font-size: 29upx;
+						background: #fff;
+	
+						.search-img {
+							margin: 0 20upx;
+							width: 34upx;
+							height: 34upx;
+						}
+						.itp {
+							flex: 1;
+							padding-right: 30upx;
+						}
+
+					}
+					.fix {
+						margin: 50upx auto;
+						color: #fff;
+						border-radius: 10upx;
+						text-align: center;
+						padding: 20upx 0;
+						background: #007AFF;
+						width: 130upx;
+					}
+					
+					.hover {
+						background: #2e8ff9;
+					}	
+					
+					.onlineWrap {
+						margin: 30upx 20upx;
+						
+						.infoTit {
+							display: flex;
+							justify-content: space-between;
+							font-weight: bold;
+							padding-bottom: 20upx;
+						}
+						
+						.scroll {
+							width: auto; height: 250upx;
+							
+							.infoBox {
+								display: flex;
+								padding: 16upx 0;
+								font-size: 28upx;
+								justify-content: space-between;
+								border-bottom: 1upx solid #ccc;
+							}
+							
+							.tip {
+								text-align: center;
+								padding: 30upx 0;
+							}
+							
+							.left {
+								width: 33%;
+								text-align: left;
+							}
+							.middle {
+								width: 33%;
+								text-align: center;
+							}
+							.right {
+								flex: 1;
+								text-align: right;
+								color: #0077AA;
+							}
+						}
+					}
+				}
+				
+				.subnav {
+					display: flex;
+					justify-content: space-between;
+					font-size: 30upx;
+					padding: 30upx;
+				}
+				
+				.wrap {
+					font-size: 28upx;
+					display: flex;
+					padding: 0 30upx;
+					
+					.left {
+						width: 260upx;
+					}
+					
+					.middle {
+						width: 220upx;
+					}
+					
+					.right {
+						flex: 1;
+					}
+				}
+			}
+	
+			.item {
+				width: 130upx;
+				height: 130upx;
+				margin: 0 50upx 30upx 0;
+				line-height: 130upx;
+				text-align: center;
+				border-radius: 50%;
+				color: #333;
+				background: #e5e5e5;
+			}
+	
+			.itemActive {
+				background: #999;
+			}
+	
+			.phone-box {
+				font-size: 70upx;
+				margin: auto;
+				background: #00a67f;
+	
+				.phone {
+					color: #fff;
+				}
+			}
+	
+			.callActive {
+				opacity: 0.7;
+			}
+	
+			.delete {
+				position: absolute;
+				top: 40upx;
+				right: 116upx;
+				margin-left: 42px;
+				color: #999;
+				font-size: 64upx;
+			}
+	
+	
+		}
+}

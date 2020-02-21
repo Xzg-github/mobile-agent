@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "联络详情",
+  "usingComponents": {
+    "call-in-nav": "/components/CallInNav",
+    "order-history": "/components/OrderHistory",
+    "record": "/components/Record",
+    "policy-information": "/components/PolicyInformation"
+  }
+}

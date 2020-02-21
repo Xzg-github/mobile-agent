@@ -1,0 +1,59 @@
+page {
+  border-top: 1rpx solid #ccc;
+  background: #f7f6f9;
+}
+.nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+  background-color: #fff;
+  font-size: 28rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+.nav .nav-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.nav .nav-item.active text {
+  position: relative;
+  color: #4a85d3;
+}
+.nav .nav-item.active text:before {
+  content: " ";
+  position: absolute;
+  top: 60rpx;
+  left: 50%;
+  margin-left: -12rpx;
+  width: 24rpx;
+  height: 4rpx;
+  background-color: #4a85d3;
+}
+.ipt-box {
+  position: relative;
+  margin: 30rpx 30rpx 0 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  height: 70rpx;
+  border-radius: 12rpx;
+  font-size: 26rpx;
+  border: 1rpx solid #999;
+}
+.ipt-box .ipt {
+  padding: 0 120rpx 0 30rpx;
+}
+.ipt-box .search-image {
+  width: 34rpx;
+  height: 34rpx;
+  margin-left: 30rpx;
+}
+

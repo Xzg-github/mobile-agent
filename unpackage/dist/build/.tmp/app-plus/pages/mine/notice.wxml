@@ -1,0 +1,1 @@
+<view><view class="inner"><view class="title">{{obj.noticeTitle}}</view><view class="content"><u-parse vue-id="1" content="{{obj.content}}" bind:__l="__l"></u-parse></view><view class="bottom"><view>{{"创建人："+obj.createName}}</view><view>{{"创建时间："+obj.sendTime}}</view></view></view></view>

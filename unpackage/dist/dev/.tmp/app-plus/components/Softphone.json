@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "login": "/components/softphone/Login",
+    "agree-login": "/components/softphone/AgreeLogin",
+    "available": "/components/softphone/Available",
+    "callphone": "/components/softphone/Callphone",
+    "handup": "/components/softphone/Handup",
+    "callsuccess": "/components/softphone/Callsuccess",
+    "hold": "/components/softphone/Hold",
+    "consult": "/components/softphone/Consult",
+    "meeting": "/components/softphone/Meeting",
+    "reprocessing": "/components/softphone/Reprocessing",
+    "logining": "/components/softphone/Logining",
+    "callcontent": "/components/softphone/Callcontent",
+    "answer": "/components/softphone/Answer"
+  },
+  "component": true
+}

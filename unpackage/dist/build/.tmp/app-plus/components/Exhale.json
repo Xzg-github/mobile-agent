@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "contact-info": "/components/ContactInfo",
+    "contact-history": "/components/ContactHistory",
+    "questionnaire": "/components/Questionnaire",
+    "service": "/components/Service"
+  },
+  "component": true
+}

@@ -1,0 +1,72 @@
+.customer-info {
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+.customer-info .questionnaire {
+  font-size: 26rpx;
+}
+.customer-info .head {
+  color: #808080;
+}
+.customer-info .head .head-item {
+  padding-bottom: 16rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.customer-info .head .head-item .item-name {
+  width: 20%;
+}
+.customer-info .head .head-item text {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.customer-info .subject {
+  line-height: 42rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.customer-info .content {
+  padding-top: 14rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  line-height: 44rpx;
+}
+.customer-info .content .left {
+  width: 50%;
+}
+.customer-info .content .left .leftIcon {
+  font-size: 30rpx;
+}
+.customer-info .content .right {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  font-size: 24rpx;
+  color: #808080;
+}
+.customer-info .content .iconfont {
+  margin-right: 10rpx;
+}
+.customer-info .btn-box {
+  margin-top: 30rpx;
+  color: #fff;
+  width: 380rpx;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.customer-info .btn-box .go {
+  width: 150rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background: #4a85d3;
+  border-radius: 8rpx;
+}
+

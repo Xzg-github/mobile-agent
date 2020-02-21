@@ -1,0 +1,32 @@
+.inner-wrap {
+  margin: 30rpx 0 60rpx 0;
+  font-size: 28rpx;
+}
+.inner-wrap .msg-list .msgTitle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-left: 30rpx;
+  padding: 30rpx 30rpx 30rpx 0;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #DADADA;
+  font-size: 30rpx;
+}
+.inner-wrap .msg-list .msgTitle .magTime {
+  font-size: 26rpx;
+  color: #808080;
+}
+.inner-wrap .img {
+  display: block;
+  margin: 100rpx auto;
+}
+.inner-wrap .active {
+  background: #ECECEC;
+}
+

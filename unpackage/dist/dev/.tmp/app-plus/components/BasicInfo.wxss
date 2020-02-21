@@ -1,0 +1,17 @@
+.info {
+  background: #fff;
+  border-radius: 14rpx;
+  margin: 20rpx 30rpx;
+  padding: 30rpx;
+  font-size: 28rpx;
+  line-height: 58rpx;
+}
+.info .list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.info .list .title {
+  color: #808080;
+}
+

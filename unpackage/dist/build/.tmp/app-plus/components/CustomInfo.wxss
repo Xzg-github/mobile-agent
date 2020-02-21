@@ -1,0 +1,24 @@
+.main-wrap {
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+  line-height: 52rpx;
+}
+.main-wrap .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.main-wrap .attribute {
+  display: block;
+  width: 200rpx;
+  color: #666;
+}
+.main-wrap .clickable {
+  color: #007AFF;
+}
+.active {
+  background: #ECECEC;
+}
+

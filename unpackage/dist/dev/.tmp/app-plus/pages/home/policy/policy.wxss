@@ -1,0 +1,166 @@
+page {
+  border-top: 1rpx solid #ccc;
+  background: #edeeee;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.iconfont {
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  padding-right: 10rpx;
+  color: #9b9b9b;
+}
+.num {
+  font-size: 34rpx;
+}
+.screen {
+  position: relative;
+  background: #4a85d3;
+  margin-bottom: 40rpx;
+  padding: 70rpx 0 30rpx 0;
+  border-top: 2rpx solid #ccc;
+  border-bottom-right-radius: 28rpx;
+  border-bottom-left-radius: 28rpx;
+  overflow: hidden;
+}
+.screen .ipt-box {
+  margin: 0rpx 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  height: 70rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+  font-size: 29rpx;
+  background: #fff;
+  position: relative;
+  z-index: 99;
+}
+.screen .ipt-box .pk {
+  width: 38%;
+  text-align: center;
+}
+.screen .ipt-box .pk .option {
+  color: #666;
+}
+.screen .ipt-box .pk .line {
+  padding-left: 10rpx;
+  border-right: 2rpx solid #969896;
+}
+.screen .ipt-box .itp {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.screen .ipt-box .search-img {
+  margin: 0 20rpx;
+  width: 34rpx;
+  height: 34rpx;
+}
+.screen .round {
+  position: absolute;
+  background: #fff;
+}
+.screen .xs-round {
+  right: 304rpx;
+  top: 40rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+.screen .big-round {
+  right: -50rpx;
+  top: -20rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: 0;
+}
+.list-wrap {
+  position: relative;
+  box-shadow: 0 0 8rpx #e0e5ec;
+  margin: 0 20rpx 30rpx 20rpx;
+  padding: 0 20rpx;
+  border-radius: 14rpx;
+  background: #fff;
+  overflow: hidden;
+}
+.list-wrap .list-title {
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  border-bottom: 1rpx dashed #CCC;
+}
+.list-wrap .list-title .iconfont {
+  color: #4a85d3;
+  font-weight: bold;
+  padding-right: 10rpx;
+}
+.list-wrap .list-title .left-round {
+  position: absolute;
+  font-size: 38rpx;
+  left: -20rpx;
+  top: 60rpx;
+  color: #edeeee;
+}
+.list-wrap .list-title .right-round {
+  position: absolute;
+  font-size: 38rpx;
+  right: -20rpx;
+  top: 60rpx;
+  color: #edeeee;
+}
+.list-wrap .list-title .state {
+  color: #55A532;
+}
+.list-wrap .list-body {
+  padding: 18rpx 0;
+  line-height: 50rpx;
+  font-size: 28rpx;
+}
+.list-wrap .list-body .list-box {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+.list-wrap .list-body .list-box .list-tit {
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+.list-wrap .list-body .list-box .car-num {
+  background: #007AFF;
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 8rpx;
+}
+.list-wrap .list-body .bottom {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin-top: 20rpx;
+}
+.list-wrap .list-body .tips {
+  font-size: 26rpx;
+  color: #666;
+}
+

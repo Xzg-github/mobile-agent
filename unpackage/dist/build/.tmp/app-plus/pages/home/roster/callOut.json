@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "信息详情",
+  "usingComponents": {
+    "contact-info": "/components/ContactInfo",
+    "contact-history": "/components/ContactHistory",
+    "questionnaire": "/components/Questionnaire",
+    "service": "/components/Service",
+    "basic-info": "/components/BasicInfo",
+    "softphone": "/components/Softphone"
+  }
+}

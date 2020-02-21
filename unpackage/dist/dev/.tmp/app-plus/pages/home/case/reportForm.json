@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "报案表单填写",
+  "usingComponents": {
+    "city": "/components/City"
+  }
+}

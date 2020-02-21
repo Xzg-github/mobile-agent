@@ -1,0 +1,78 @@
+.mainBody {
+  padding: 30rpx;
+  font-size: 28rpx;
+  background: #fff;
+}
+.mainBody .item,
+.mainBody .section {
+  padding-bottom: 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.mainBody .item .picker-box,
+.mainBody .section .picker-box {
+  font-size: 26rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  box-sizing: border-box;
+  padding: 10rpx 34rpx 10rpx 20rpx;
+  border: 1rpx solid #999;
+  border-radius: 6rpx;
+}
+.mainBody .item .picker,
+.mainBody .section .picker {
+  position: relative;
+}
+.mainBody .item .picker .down,
+.mainBody .section .picker .down {
+  position: absolute;
+  right: -26rpx;
+  top: 6rpx;
+}
+.mainBody .item .item-mane,
+.mainBody .section .item-mane {
+  width: 146rpx;
+  text-align: right;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+}
+.mainBody .item .item-mane .tips,
+.mainBody .section .item-mane .tips {
+  margin-right: 6rpx;
+  color: #f5222d;
+}
+.mainBody .item textarea,
+.mainBody .section textarea {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  height: 100rpx;
+  border: 1rpx solid #999;
+  border-radius: 6rpx;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+}
+.mainBody .item .ridao,
+.mainBody .section .ridao {
+  display: block;
+  padding: 3rpx 6rpx 0 0;
+  font-size: 30rpx;
+}
+.mainBody .item .icn,
+.mainBody .section .icn {
+  color: #4a85d3;
+}
+.mainBody .center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.btn {
+  background: #4a85d3;
+  padding: 0;
+  margin: 0 30rpx;
+  color: #fff;
+}
+

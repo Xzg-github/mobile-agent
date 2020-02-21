@@ -1,0 +1,54 @@
+.mainBody {
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+.mainBody .item,
+.mainBody .section {
+  padding-bottom: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.mainBody .item .picker-box,
+.mainBody .section .picker-box {
+  font-size: 26rpx;
+  width: 80%;
+  box-sizing: border-box;
+  padding: 0 6rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  border: 1rpx solid #ccc;
+}
+.mainBody .item .picker,
+.mainBody .section .picker {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.mainBody .item .picker .down,
+.mainBody .section .picker .down {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.mainBody .item .item-mane,
+.mainBody .section .item-mane {
+  width: 20%;
+}
+.mainBody .item textarea,
+.mainBody .section textarea {
+  width: 80%;
+  height: 100rpx;
+  border: 1rpx solid #ccc;
+}
+.mainBody .item .iconfont,
+.mainBody .section .iconfont {
+  display: block;
+  padding: 3rpx 6rpx 0 0;
+  font-size: 30rpx;
+}
+.mainBody .item .icn,
+.mainBody .section .icn {
+  color: #4a85d3;
+}
+

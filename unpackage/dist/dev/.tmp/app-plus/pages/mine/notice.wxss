@@ -1,0 +1,27 @@
+.inner {
+  margin: 50rpx 30rpx 30rpx 30rpx;
+  padding: 20rpx;
+}
+.inner .title {
+  padding-bottom: 40rpx;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.inner .content {
+  text-indent: 2em;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.inner .bottom {
+  padding-top: 50rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  font-size: 24rpx;
+  color: #808080;
+}
+

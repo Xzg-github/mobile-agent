@@ -1,0 +1,28 @@
+.customer-info {
+  padding: 30rpx;
+  font-size: 28rpx;
+}
+.customer-info .info-list {
+  line-height: 50rpx;
+}
+.customer-info .questionnaire {
+  font-size: 26rpx;
+}
+.customer-info .head {
+  color: #808080;
+}
+.customer-info .head .head-item {
+  padding-bottom: 16rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.customer-info .head .head-item .item-name {
+  width: 20%;
+}
+.customer-info .head .head-item text {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+

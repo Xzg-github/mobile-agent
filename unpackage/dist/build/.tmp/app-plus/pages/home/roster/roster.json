@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "外呼名单",
+  "usingComponents": {
+    "custom-info": "/components/CustomInfo"
+  }
+}

@@ -1,0 +1,9 @@
+.content-wrap {
+  padding: 30rpx;
+  font-size: 30rpx;
+  background: #fff;
+}
+.content-wrap .info-list {
+  line-height: 60rpx;
+}
+

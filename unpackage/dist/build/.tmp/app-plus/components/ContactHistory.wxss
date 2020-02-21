@@ -1,0 +1,45 @@
+.info-list {
+  padding: 20rpx 0rpx 20rpx 30rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  background: #fff;
+}
+.info-list .info-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding-top: 20rpx;
+}
+.info-list .info-item .item-name {
+  width: 20%;
+  color: #808080;
+  font-size: 29rpx;
+}
+.info-list .first {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 0 30rpx 20rpx 0;
+  border-bottom: 1rpx solid #ccc;
+}
+.info-list .first .first-title {
+  color: #333;
+  font-size: 30rpx;
+}
+.info-list .first .toCall {
+  font-size: 28rpx;
+}
+.info-list .first .toCall .call {
+  font-size: 30rpx;
+  color: #55A532;
+}
+.info-list .first .toCall .callIn {
+  color: #EE9900;
+}
+.active {
+  background: #ECECEC;
+}
+

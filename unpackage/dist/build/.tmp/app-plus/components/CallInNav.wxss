@@ -1,0 +1,35 @@
+.nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 30rpx;
+  text-align: center;
+  background-color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.nav .nav-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.nav .nav-item text {
+  color: #666;
+}
+.nav .nav-item.active text {
+  position: relative;
+  color: #4a85d3;
+}
+.nav .nav-item.active text:before {
+  content: " ";
+  position: absolute;
+  top: 60rpx;
+  left: 50%;
+  margin-left: -12rpx;
+  width: 24rpx;
+  height: 4rpx;
+  background-color: #4a85d3;
+}
+
