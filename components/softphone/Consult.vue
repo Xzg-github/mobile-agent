@@ -56,14 +56,14 @@
 			//结束咨询
 			cancel(){
 				var self = this
-				socketYatai.end(this.strb,function(){
+				socketMain.end(this.strb,function(){
 					self.$emit("funa",8);
 				})
 			},
 			
 			//会议
 			Finishconference(){
-				socketYatai.finishConference(this.stra,this.strb)
+				socketMain.finishConference(this.stra,this.strb)
 			}
 		}
 

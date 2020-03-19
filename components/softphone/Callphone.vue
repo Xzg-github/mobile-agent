@@ -141,7 +141,7 @@
 						self.$emit("funa", funa_obj);
 						
 						// 拨打电话
-						await socketMain.makecall(phoneNum)
+						await socketMain.makecall(phoneNum,self.num)
 					}
 					makeCall()
 					

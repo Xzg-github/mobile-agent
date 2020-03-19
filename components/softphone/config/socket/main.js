@@ -40,19 +40,21 @@ module.exports.receiveEvenName = function(dataobj){
 module.exports.clickBtn = function(dataobj,show){
 	var userInfo = this.getType()
 	if(userInfo.platformType == '3'){
-		return socketYatai.clickBtn(dataobj,show)
+		return {
+			show: socketYatai.clickBtn(dataobj,show)
+		}
 	}else {
 		return socketAspect.clickBtn(dataobj,show)
 	}
 },
 
 // 拨打电话(手动//外呼)
-module.exports.makecall = function(phone){
+module.exports.makecall = function(phone,num){
 	var userInfo = this.getType()
 	if(userInfo.platformType == '3'){
 		socketYatai.makecall(phone)
 	}else {
-		socketAspect.makecall(phone,userInfo)
+		socketAspect.makecall(num,userInfo)
 	}
 },
 
@@ -72,7 +74,7 @@ module.exports.answer = function(strb){
 	if(userInfo.platformType == '3'){
 		socketYatai.answer(strb)
 	}else {
-		socketAspect.answer()
+		socketAspect.answer(userInfo)
 	}
 },
 
@@ -136,17 +138,17 @@ module.exports.hangOff = function(stra,cb){
 	}
 },
 
-//咨询 (需测试)
-module.exports.iniConsult = function(newPhoneNum,stra,cb){
+//咨询 
+module.exports.iniConsult = function(newPhoneNum,stra,phoneData,cb){
 	var userInfo = this.getType()
 	if(userInfo.platformType == '3'){
 		socketYatai.iniConsult(newPhoneNum,stra,cb)
 	}else {
-		socketAspect.iniConsult(newPhoneNum,cb)
+		socketAspect.iniConsult(phoneData,cb,userInfo)
 	}
 },
 
-//后处理 (需测试,yatai的需多写代码)
+//后处理
 module.exports.afterTreatment = function(cb){
 	var userInfo = this.getType()
 	if(userInfo.platformType == '3'){
@@ -156,18 +158,18 @@ module.exports.afterTreatment = function(cb){
 	}
 },
 
-//转接(需测试)
+//转接
 module.exports.finishTransfer = function(stra,strb){
 	var userInfo = this.getType()
 	if(userInfo.platformType == '3'){
 		socketYatai.finishTransfer(stra,strb)
 	}else {
-		socketAspect.finishTransfer()
+		socketAspect.finishTransfer(userInfo)
 	}
 },
 
 
-//盲转接(aspect需再测试)
+//盲转接
 module.exports.blindTransfer = function(key,phoneData){
 	var userInfo = this.getType()
 	if(userInfo.platformType == '3'){
@@ -177,9 +179,25 @@ module.exports.blindTransfer = function(key,phoneData){
 	}
 },
 
+//会议
+module.exports.finishConference = function(stra,strb){
+	var userInfo = this.getType()
+	if(userInfo.platformType == '3'){
+		socketYatai.finishConference(stra,strb)
+	}else {
+		socketAspect.finishConference(userInfo)
+	}
+},
 
-
-
+//结束咨询
+module.exports.end = function(str,cb){
+	var userInfo = this.getType()
+	if(userInfo.platformType == '3'){
+		socketYatai.end(str,cb)
+	}else {
+		socketAspect.end(userInfo)
+	}
+}
 
 
 // 软电话登入
@@ -193,30 +211,17 @@ module.exports.blindTransfer = function(key,phoneData){
 // },
 
 
-
-
-
-
-
-
-
 //点击示闲
 // module.exports.agentAvailable = function(){
 	
 // },
 
-//会议
-module.exports.finishConference = function(stra,strb){
-	
-},
 
 
 
 
-//结束咨询
-module.exports.end = function(str,cb){
-	
-}
+
+
 
 
 

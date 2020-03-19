@@ -32,7 +32,7 @@
 	export default {
 		
 		// 提取存储数据
-		computed: mapState(['hasLogin','uerInfo']), 
+		//computed: mapState(['hasLogin','uerInfo']), 
 		
 		data() {
 			return {

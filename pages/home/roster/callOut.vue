@@ -153,11 +153,14 @@
 			...mapState(['hasLogin', 'uerInfo']), 
 			
 			phoneReceiveObj() {
+				console.log('computed method in Home.vue')
 				return this.$store.state.phoneReceiveObj
 			}
 		},
 		watch: {
 			phoneReceiveObj(curData,prevData){
+				
+				console.log('watch method in Home.vue')
 				this.socketObj = curData
 			}
 		},
@@ -562,9 +565,12 @@
 				if(val3 == 'add'){  
 					this.prev_id = this.prev_id + 1
 					this.prev_arr[this.prev_id] = val2
+					
 				}else{
 					this.prev_id = this.prev_id - 1
 				}
+				//console.log(this.prev_id)
+				
 				this.questionObj = val1
 			},
 			

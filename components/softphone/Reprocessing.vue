@@ -29,8 +29,10 @@
 
 <script>
 	import socketMain from "@/components/softphone/config/socket/main";
+	import {  mapState,  mapMutations  } from 'vuex';
 	export default {
 		props:['timer'],
+		computed: mapState(['hasLogin','uerInfo']),
 		data() {
 			return {
 				selectIndex: '', //示忙下拉选项
@@ -76,7 +78,10 @@
 			end(){
 				var self = this
 				socketMain.afterTreatment(function(){
-					self.$emit('funb')
+					if(self.uerInfo.platformType == '3'){
+						self.$emit('funb')
+					}
+					
 				})
 				
 			}

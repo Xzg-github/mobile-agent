@@ -63,6 +63,7 @@ module.exports.clickBtn = function(dataobj,show){
 		}      
 		
 	}
+	
 	return show
 	
 },
@@ -75,8 +76,6 @@ module.exports.clickBtn = function(dataobj,show){
 // 		data: cmd,
 // 	});
 // },
-
-
 
 
 // 拨打电话(手动//外呼)
@@ -266,9 +265,9 @@ module.exports.iniConsult = function(newPhoneNum,stra,cb){
 			cb()
 		}
 	});
-},
+}
 
-//后处理(需测试)
+//后处理
 module.exports.afterTreatment = function(cb){
 	cb()
 }

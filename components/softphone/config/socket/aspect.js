@@ -1,4 +1,4 @@
-//接受实时事件
+//接受实时事件(事件没写到这里,后期有需要可以写,暂放)
 module.exports.receiveEvenName = function(dataobj){
 	console.log(dataobj[0])
 	// ORIGINATED 接通中
@@ -9,8 +9,8 @@ module.exports.receiveEvenName = function(dataobj){
 	// TRANSFERRED 咨询中
 	// FAILED 错误
 
-	var evenName = ['','','','event_active','SERVICE_INITIATED','TRANSFERRED','FAILED']
-	
+	//var evenName = ['','','','event_active','SERVICE_INITIATED','TRANSFERRED','FAILED']
+	var evenName = []
 	var obj = {}
 	return {
 		'name': dataobj[0],  
@@ -20,8 +20,10 @@ module.exports.receiveEvenName = function(dataobj){
 
 // 接收状态
 module.exports.clickBtn = function(dataobj,show){ 
-	 console.log(dataobj[0])
-	// console.log(dataobj[1])
+	
+	var obj = {}
+	// console.log(dataobj[0])
+	 console.log(dataobj[1])
 	switch (dataobj[0]){ 
 		case 'event_loggingin':   // 签入中 event_loggingin
 			show = 11  
@@ -37,6 +39,12 @@ module.exports.clickBtn = function(dataobj,show){
 			show = 3  
 			break;
 		case 'event_dialing':   // 拨打号码
+		
+			console.log('show---'+show)
+			if( show == 10  || show == 7 )  {
+				return false
+			}
+			
 			// 外拨振铃
 			if (dataobj[1].statusReason == 14) {
 				show = 5 
@@ -45,7 +53,7 @@ module.exports.clickBtn = function(dataobj,show){
 				show = 13
 			}
 			break;
-		case 'event_active':   // 接通中
+		case 'event_active':   // 接通
 			show = 6  
 			break;
 		case 'event_callclear':   // 挂断
@@ -69,9 +77,17 @@ module.exports.clickBtn = function(dataobj,show){
 			show = 9  
 			break;
 		case 'event_screenpop':   // 转接(需测试)
+		 
 			if (dataobj[1].statusReason == 17) { // 别的坐席咨询呼入或转接呼入
 				show = 6 
+			}if(dataobj[1].statusReason == 1){
+				
+				obj.phoneNum = dataobj[1].callInfo.screenData.ani //呼入电话号码
+				show = 13
+			} else{
+				show = 10
 			}
+			
 			break;
 		case 'event_wrap':   // 后处理
 			show = 10  
@@ -93,7 +109,8 @@ module.exports.clickBtn = function(dataobj,show){
 			break;
 		    
 	} 
-	return show
+	obj.show = show
+	return obj
 	
 },
 
@@ -187,12 +204,10 @@ module.exports.agentAuxwork = function(id,uerInfo,cb){
 },
 
 // 拨打电话(手动//外呼)
-module.exports.makecall = function(phone,uerInfo){
-	console.log(phone)
-	var newPhone = phone.slice(1)
+module.exports.makecall = function(num,uerInfo){
 	var cmd = {
 		agentId: uerInfo.username,
-		phoneNumber: newPhone,
+		phoneNumber: num,
 	}
 	uni.sendSocketMessage({
 		data: '425["phone:dialCall",' + JSON.stringify(cmd)+ ']',
@@ -230,12 +245,11 @@ module.exports.unHold = function(uerInfo){
 	});
 },
 
-//咨询(需测试,请求发送成功 未返回结果)
-module.exports.iniConsult = function(newPhoneNum,cb){
-	console.log(newPhoneNum)
-	var newPhone = newPhoneNum.slice(1)
+//咨询
+module.exports.iniConsult = function(phoneData,cb,uerInfo){
 	var cmd = {
-		number: newPhone, // 外呼号码
+		agentId: uerInfo.username,
+		number: phoneData, // 外呼号码
 		transferWay: 1 // 咨询服务 0: '坐席', 1: '外部', 2: '服务'
 	};
 	uni.sendSocketMessage({
@@ -246,7 +260,7 @@ module.exports.iniConsult = function(newPhoneNum,cb){
 	});
 },
 
-//后处理(需测试,为改变状态)
+//后处理
 module.exports.afterTreatment = function(uerInfo,cb){
 	uni.sendSocketMessage({
 		data: '425["phone:acw",' + '"' + uerInfo.username + '"' + ']',
@@ -256,23 +270,19 @@ module.exports.afterTreatment = function(uerInfo,cb){
 	});
 },
 
-//转接(需测试)
-// module.exports.finishTransfer = function(agentId){
-// 	var cmd = {
-// 		number: agentId, // 要转接的坐席的工号
-// 		transferWay: 0 // 转坐席
-// 	};
-// 	uni.sendSocketMessage({
-// 		data: '432["phone:doubleTransfer",' + JSON.stringify(cmd)+ ']',
-// 		success:function(){
-// 			//self.pop = 0
-// 		}
-// 	});
-// },
+//转接
+module.exports.finishTransfer = function(uerInfo){
+	// var cmd = {
+	// 	number: agentId, // 要转接的坐席的工号
+	// 	transferWay: 0 // 转坐席
+	// };
+	uni.sendSocketMessage({
+		data: '4212["phone:doubleTransfer",' + '"' + uerInfo.username + '"' + ']',
+	});
+},
 
-//盲转接(已转接成功)
+//盲转接
 module.exports.blindTransfer = function(uerInfo,key){
-	//var newPhone = key.slice(2) //这里需要判断去除90
 	var cmd = {
 		agentId: uerInfo.username,
 		number: key, // 要转接的坐席的工号
@@ -286,16 +296,24 @@ module.exports.blindTransfer = function(uerInfo,key){
 	});
 },
 
-//会议(需测试)
-module.exports.finishConference = function(stra,strb){
+//会议
+module.exports.finishConference = function(uerInfo){
 	uni.sendSocketMessage({
-		data: '432["phone:conference",' + JSON.stringify(cmd)+ ']',
+		data: '427["phone:conference",' + '"' + uerInfo.username + '"' + ']',
 	});
 },
 
-//点击接听(需测试)
+
+//结束咨询
+module.exports.end = function(uerInfo){
+	uni.sendSocketMessage({
+		data: '428["phone:hangup",' + '"' + uerInfo.username + '"' + ']',
+	});
+},
+
+//点击接听
 module.exports.answer = function(uerInfo){
 	uni.sendSocketMessage({
-		data: '433["phone:answer",' + '"' + uerInfo.username + '"' + ']',
+		data: '429["phone:answer",' + '"' + uerInfo.username + '"' + ']',
 	});
-}
+}   

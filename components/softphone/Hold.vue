@@ -230,7 +230,7 @@
 						var phoneNum = '9'+dial[1].data.data
 						self.newPhoneNum = phoneNum
 						
-						socketMain.iniConsult(self.newPhoneNum,self.stra,function(){
+						socketMain.iniConsult(self.newPhoneNum,self.stra,self.phoneData,function(){
 							self.$emit("funa", true); 
 						})
 					}

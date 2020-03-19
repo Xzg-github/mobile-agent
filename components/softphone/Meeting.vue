@@ -23,7 +23,8 @@
 </template>
 
 <script>
-	import socketYatai from "@/components/softphone/config/socket/yatai";
+	//import socketYatai from "@/components/softphone/config/socket/yatai";
+	import socketMain from "@/components/softphone/config/socket/main";
 	export default {
 		props:['timer','stra'],
 		data() {
@@ -39,7 +40,7 @@
 			
 			//结束会议
 			Hangup (){
-				socketYatai.hangUp(this.stra)
+				socketMain.hangUp(this.stra)
 			}
 		}
 
