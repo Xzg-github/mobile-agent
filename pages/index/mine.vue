@@ -56,6 +56,7 @@
 	import {  mapState,  mapMutations  } from 'vuex'; 
 	import News from "@/components/News.vue";
 	import common from "@/components/softphone/config/common";
+	import socketMain from "@/components/softphone/config/socket/main";
 	
 	export default {
 		components :{
@@ -134,11 +135,21 @@
 				.then((data) => {
 					var status = data[1].data.status
 					if(status == '0'){
-						this.offline()//坐席退出
+						//console.log("self.platformType======="+self.platformType);
+						//if( self.platformType == '3'){
+							this.offline()//坐席退出
+						//}
+						this.Agentlogout()//软电话签出
 					}
 				})
 			},
-			
+			//签出
+			Agentlogout(){
+				var self = this
+				socketMain.agentLogout(function(){
+					self.$emit("funb", 1)
+				})
+			},
 			//坐席登出
 			offline(){
 				var self= this

@@ -224,7 +224,7 @@
 											})
 										}
 									})
-								}else{
+								}else{ 
 									uni.reLaunch({
 										url: '/pages/index/home'
 									})
