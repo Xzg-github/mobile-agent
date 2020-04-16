@@ -377,7 +377,7 @@
 					//获取客户ID、姓名
 					await api.getCusInfo(self.apiDomian,self.uerInfo.token,setPhone,self.starDate,self.endDate,function(data){
 						var obj = data[1].data.data
-						if(obj){
+						if(obj && obj.records){
 							var infoArr = obj.records
 							self.customerCode = infoArr[0].clientId //客户ID
 							self.customerName = infoArr[0].clientName //客户姓名

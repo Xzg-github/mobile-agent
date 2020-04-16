@@ -3,7 +3,7 @@ module.exports.checkPhone = function(phone){
 	var flag = false
 	phone = phone.replace(/\s/g, "") 
 	
-	if(!(/^1[3456789]\d{9}$/.test(phone))){
+	/* if(!(/^1[3456789]\d{9}$/.test(phone))){
 		uni.showToast({
 		    title: '手机号格式错误',
 		    duration: 2000,
@@ -12,9 +12,9 @@ module.exports.checkPhone = function(phone){
 		flag = false; 
 	}else{
 		flag = true
-	}
+	} */
 	
-	return flag;
+	return true;
 },
 
 //每次通话开始时候储存一个时间

@@ -3,15 +3,15 @@
 		<view>
 			<!-- 按钮组 -->
 			<view class="top-wrap">
-				<view class="callIn-box">
+				 <view class="callIn-box-2">
 					<view class="btn" hover-class="active" @click="Unhold">
 						<view class="iconfont icon">&#xe715;</view>
 						<view>取消保持</view>
 					</view>
-					<view class="btn" hover-class="active" @click="showPop('2')">
+					<!-- <view class="btn" hover-class="active" @click="showPop('2')">
 						<view class="iconfont icon">&#xe60c;</view>
 						<view>转接</view>
-					</view>
+					</view> -->
 					<view class="btn" hover-class="active" @click="showPop('1')">
 						<view class="iconfont icon">&#xe637;</view>
 						<view>咨询</view>
@@ -83,61 +83,6 @@
 								</view>
 							</form>
 							<view class="fix" hover-class="hover" @click="consult(phoneData)">咨询</view>
-						</view>
-					</view>
-				</view>
-			</view>
-			
-			<!-- 转接弹窗 -->
-			<view class="popUp" v-if="pop == 2">
-				<view class="inner">
-					<view class="close" @click="close">
-						<view class="iconfont">&#xe6c3;</view>
-					</view>
-					<text class="title">转接</text>
-					<view class="nav">
-						<view :class='["nav-item",state=="A" ? "active" : ""]' @click="changeNav('A')">
-							<text>按坐席</text>
-						</view>
-						<view :class='["nav-item",state=="C" ? "active" : ""]' @click="changeNav('C')">
-							<text>按分机号</text>
-						</view>
-					</view>
-					<view class='bottom'>
-						<view v-if="state=='A'">
-							<form bindsubmit="search">
-								<view class="ipt-box">
-									<image class="search-img" src="../../static/images/search.png"></image>
-									<input class="itp" type="text" v-model="query" @confirm="getMsg()" confirm-type="search" placeholder="请输入" />
-								</view>
-							</form>
-							<!-- 在线坐席列表 -->
-							<view class="onlineWrap">
-								<view class="infoTit">
-									<view>坐席姓名</view>
-									<view>坐席工号</view>
-									<view>坐席分机</view>
-								</view>
-								<scroll-view class="scroll" scroll-y>
-									<view v-if="infoArr != ''">
-										<view class="infoBox" v-for="(list,index) in infoArr" v-if="list.agentId != uerInfo.username" :key="index">
-											<view class="left">{{ list.agentName }}</view>
-											<view class="middle">{{ list.agentId }}</view>
-											<view class="right" @click="blindtransfer(list.phoneNo)">{{ list.phoneNo }}</view>
-										</view>
-									</view>
-									<view v-else class="tip">暂无在线坐席</view>
-								</scroll-view>
-							</view>
-						</view>
-						<view v-if="state=='C'">
-							<form bindsubmit="search">
-								<view class="ipt-box">
-									<image class="search-img" src="../../static/images/search.png"></image>
-									<input class="itp" type="number" v-model="phoneData" placeholder="请输入外部号码" />
-								</view>
-							</form>
-							<view class="fix" hover-class="hover" @click="blindtransfer(phoneData)">转接</view>
 						</view>
 					</view>
 				</view>
@@ -249,7 +194,7 @@
 			},
 			
 			//盲转接
-			blindtransfer(key){
+			/* blindtransfer(key){
 				var self = this
 				self.phoneData = self.phoneData.replace(/\s/g, "")
 				var phoneFlag = common.checkPhone(self.phoneData)
@@ -276,7 +221,7 @@
 					socketMain.blindTransfer(key)
 				}
 				
-			},
+			}, */
 			
 			//切换咨询、转接的弹窗
 			showPop(key){

@@ -2,15 +2,15 @@
 		<view>
 			<!-- 按钮组 -->
 			<view class="top-wrap">
-				<view class="callIn-box">
+				<view class="callIn-box-2">
 					<view class="btn" hover-class="active" @click="Hold">
 						<view class="iconfont icon">&#xe715;</view>
 						<view>保持</view>
 					</view>
-					<view class="btn" hover-class="active" @click="showPop('1')">
+					<!-- <view class="btn" hover-class="active" @click="showPop('1')">
 						<view class="iconfont icon">&#xe60c;</view>
-						<view>转接</view>
-					</view>
+						<view>咨询</view>
+					</view> -->
 					<view class="btn" hover-class="active" @click="Hangup">
 						<view class="iconfont icon">&#xe705;</view>
 						<view>挂断</view>
@@ -37,7 +37,7 @@
 					<view class="close" @click="close">
 						<view class="iconfont">&#xe6c3;</view>
 					</view>
-					<text class="title">转接</text>
+					<text class="title">咨询</text>
 					<view class="nav">
 						<view :class='["nav-item",state=="A" ? "active" : ""]' @click="changeNav('A')">
 							<text>按坐席</text>
@@ -48,7 +48,7 @@
 					</view>
 					<view class='bottom'>
 						<view v-if="state=='A'">
-							<form bindsubmit="search">
+							<form>
 								<view class="ipt-box">
 									<image class="search-img" src="../../static/images/search.png"></image>
 									<input class="itp" type="text" v-model="query" @confirm="getMsg()" confirm-type="search" placeholder="请输入" />
@@ -62,25 +62,25 @@
 									<view>坐席分机</view>
 								</view>
 								<scroll-view class="scroll" scroll-y>
-									<vie v-if="infoArr != ''">
+									<view v-if="infoArr != ''">
 										<view class="infoBox" v-for="(list,index) in infoArr" v-if="list.agentId != uerInfo.username" :key="index">
 											<view class="left">{{ list.agentName }}</view>
 											<view class="middle">{{ list.agentId }}</view>
-											<view class="right" @click="blindtransfer(list.phoneNo)">{{ list.phoneNo }}</view>
+											<view class="right" @click="consult(list.phoneNo)">{{ list.phoneNo }}</view>
 										</view>
-									</vie>
+									</view>
 									<view class="tip" v-else>暂无在线坐席</view>
 								</scroll-view>
 							</view>
 						</view>
-						<view v-if="state == 'C'">
+						<view v-if="state=='C'">
 							<form bindsubmit="search">
 								<view class="ipt-box">
 									<image class="search-img" src="../../static/images/search.png"></image>
-									<input class="itp" type="number" v-model="phoneData" placeholder="请输入外部号码" />
+									<input class="itp" type="number" v-model="phoneData" placeholder="请输入外呼号码" />
 								</view>
 							</form>
-							<view class="fix" hover-class="hover" @click="blindtransfer(phoneData)">转接</view>
+							<view class="fix" hover-class="hover" @click="consult(phoneData)">咨询</view>
 						</view>
 					</view>
 				</view>
@@ -169,6 +169,39 @@
 			//挂断通话
 			Hangup(){
 				socketMain.hangUp(this.stra)
+			},
+			// 咨询
+			consult (phoneNo){
+				var self = this
+				self.phoneData = self.phoneData.replace(/\s/g, "")
+				var phoneFlag = common.checkPhone(self.phoneData)
+				if(!phoneFlag){
+					return false
+				}
+				if (phoneNo.length > 6){
+					
+					async function consultAjax () {
+						//异地号码前加0 （9固定写）例9018575663545
+						var dial = await api.getDialNumber(self.phoneData,self.uerInfo.areaCode,self.apiDomian,self.uerInfo.token)
+						var phoneNum = '9'+dial[1].data.data
+						self.newPhoneNum = phoneNum
+						
+						socketMain.iniConsult(self.newPhoneNum,self.stra,self.phoneData,function(){
+							self.$emit("funa", true); 
+						})
+					}
+					consultAjax () 
+				}else if (phoneNo.length == 0){
+					uni.showToast({
+					    title: '请输入手机号码',
+					    duration: 2000,
+						icon: 'none'
+					});
+				}else {
+					socketMain.iniConsult(phoneNo,this.stra,function(){
+						self.$emit("funa", true);
+					})
+				}
 			},
 			
 			//盲转接
